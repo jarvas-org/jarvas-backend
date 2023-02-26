@@ -1,2 +1,1 @@
-# jarvas-backend
-jarvas.org backend
+# JARVAS backend
