@@ -1,7 +1,7 @@
 {
   "name": "jarvas-backend",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "The backend for JARVAS",
   "main": "src/index.ts",
   "scripts": {
     "start": "node dist/index.js",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/jarvas-org/jarvas-backend.git"
   },
   "author": "Linbin Pang",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jarvas-org/jarvas-backend/issues"
   },
