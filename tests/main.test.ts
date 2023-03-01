@@ -3,8 +3,8 @@ import request from 'supertest'
 import '../src'
 
 describe('Main', () => {
-  it('should return "Welcome to JARVAS"', async () => {
+  it('should return "This is the backend of JARVAS"', async () => {
     const res = await request(app).get('/')
-    expect(res.text).toBe('Welcome to JARVAS')
+    expect(res.text).toBe('This is the backend of JARVAS')
   })
 })

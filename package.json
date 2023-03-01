@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error:  no test specified\" && exit 1",
+    "start": "tsc && node dist/index.js",
+    "test": "jest",
     "dev": "concurrently 'tsc --watch' 'nodemon -q dist/index.js'",
     "lint": "eslint src"
   },

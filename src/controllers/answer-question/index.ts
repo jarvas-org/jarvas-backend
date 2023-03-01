@@ -4,9 +4,11 @@ import { openaiTextCompletion } from '../../utils/openai-text-completion'
 
 app.use(bodyParser.json())
 app.post('/answer-question', (req, res) => {
-  void openaiTextCompletion(req.body.text)
-    .then(result => {
-      console.log(result)
-      res.send(result)
-    })
+  openaiTextCompletion(req.body.text, (txt) => {
+    if (txt != null) {
+      res.write(txt)
+    } else {
+      res.end()
+    }
+  })
 })
