@@ -11,11 +11,21 @@ unknown,
   messages: ChatCompletionRequestMessage[]
 }
 >('/chat', (req, res) => {
+  let isEnd = false
   openaiChatCompletion(req.body.messages, (txt) => {
     if (txt !== null) {
       res.write(txt)
     } else {
-      res.end()
+      if (!isEnd) {
+        isEnd = true
+        res.end()
+      }
     }
   })
+  setTimeout(() => {
+    if (!isEnd) {
+      isEnd = true
+      res.end('[OpenAI is dead]')
+    }
+  }, 4900)
 })
