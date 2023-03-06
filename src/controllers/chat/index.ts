@@ -2,6 +2,7 @@ import { app } from '../../app'
 import bodyParser from 'body-parser'
 import { openaiChatCompletion } from '../../utils/openai-chat-completion'
 import { type ChatCompletionRequestMessage } from 'openai'
+import { timeoutMs } from '../../env-reader'
 
 app.use(bodyParser.json())
 app.post<
@@ -27,5 +28,5 @@ unknown,
       isEnd = true
       res.end('[OpenAI is dead]')
     }
-  }, 4900)
+  }, timeoutMs)
 })
